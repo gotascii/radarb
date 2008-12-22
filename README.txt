@@ -26,7 +26,7 @@ libxml
 
 == INSTALL:
 
-sudo gem install radarb -s http://gems.github.com
+sudo gem install vigetlabs-radarb -s http://gems.github.com
 
 == LICENSE:
 
