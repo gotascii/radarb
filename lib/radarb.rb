@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'curb'
-require 'libxml'
+require 'happymapper'
 
 module Radarb
 
@@ -49,8 +49,10 @@ module Radarb
 
 end  # module Radarb
 
-require 'radarb/xml_object'
 require 'radarb/fetch'
+require 'radarb/collectable'
+require 'radarb/tag'
+require 'radarb/place'
 require 'radarb/radar'
 
 # EOF

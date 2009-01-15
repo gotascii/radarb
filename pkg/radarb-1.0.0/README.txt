@@ -10,19 +10,40 @@ A ruby gem that makes using the http://outside.in/ API simple.
 
 require 'radarb'
 
-r = Radarb::Radar.new('40.714550', '-74.007124')
-puts r.blips.length     # blips are either tweets or stories
-puts r.stories.length   # just the story blips
-puts r.tweets.length    # just the tweet blips
+blips = Radarb::Radar.scan('40.714550', '-74.007124')
 
-puts r.blips.collect(&:author)
-puts r.blips.collect{|b| b.places.first.name }
-puts r.blips.select{|b| !b.tags.empty? }.collect{|b| b.tags.first.name}
+blips.each do |blip|
+  puts blip.author
+  puts blip.url
+  puts blip.type
+end
+
+blips.stories.each do |story|
+  puts story.title
+  puts story.body
+end
+
+blips.tweets.each do |story|
+  puts story.author
+  puts story.body
+end
+
+story = blips.stories.first
+
+story.places.each do |place|
+  puts place.name
+  puts place.url
+end
+
+story.tags.each do |tag|
+  puts tag.name
+  puts tag.url
+end
 
 == REQUIREMENTS:
 
-curb
-libxml
+sudo gem install curb
+sudo gem install gotascii-happymapper -s http://gems.github.com
 
 == INSTALL:
 

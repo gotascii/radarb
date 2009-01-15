@@ -1,21 +1,23 @@
 module Radarb
   class Radar
-    attr_reader :root
+    include HappyMapper
 
-    def initialize(lat = '40.714550', lng='-74.007124')
-      @root = Fetch::fetch_xml("#{API}?lat=#{lat}&lng=#{lng}")
-    end
+    tag 'radar'
+    element :item_id, Integer
+    element :icon_path, String
+    element :author, String
+    element :author_url, String
+    element :published_at, DateTime
+    element :title, String
+    element :body, String
+    element :url, String
+    element :image_url, String
+    attribute :type, String
 
-    def blips
-      @blips ||= @root.find('/radars/radar').to_a
-    end
-
-    def stories
-      blips.select {|b| b["type"] == 'Story' }
-    end
-
-    def tweets
-      blips.select {|b| b["type"] == 'Tweet' }
+    def self.scan(lat = '40.755970', lng='-73.986702')
+      url = "#{API}?lat=#{lat}&lng=#{lng}"
+      xml = Fetch::fetch_url(url)
+      parse(xml).extend(Collectable)
     end
   end
 end
