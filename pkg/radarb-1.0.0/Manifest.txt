@@ -3,10 +3,13 @@ Manifest.txt
 README.txt
 Rakefile
 lib/radarb.rb
+lib/radarb/collectable.rb
 lib/radarb/fetch.rb
+lib/radarb/place.rb
 lib/radarb/radar.rb
-lib/radarb/xml_object.rb
+lib/radarb/tag.rb
+radarb.gemspec
+test/radarb/collectable_test.rb
 test/radarb/radar_test.rb
-test/radarb/xml_object_test.rb
 test/radarb_test.rb
 test/test_helper.rb

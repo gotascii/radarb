@@ -1,3 +1,8 @@
+== 1.1.0 / 2008-1-15
+
+* Refactored internals to use gotascii-happymapper.
+* Updated README to reflect API changes due to the happymapper refactoring.
+
 == 1.0.0 / 2008-12-16
 
 * 1 major enhancement
