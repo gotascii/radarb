@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "radarb"
-  s.version  = "1.1.0"
+  s.version  = "1.1.1"
   s.date     = "2008-01-15"
   s.summary  = "outside.in radar API wrapper."
   s.email    = "justin.marney@viget.com"
