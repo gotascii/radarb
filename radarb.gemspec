@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "radarb"
-  s.version  = "1.1.1"
+  s.version  = "1.1.2"
   s.date     = "2008-01-15"
   s.summary  = "outside.in radar API wrapper."
   s.email    = "justin.marney@viget.com"
@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
       "test/radarb/collectable_test.rb"]
   s.rdoc_options = ["--main", "README.txt"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
-  s.add_dependency("gotascii-happymapper", ["> 0.0.0"])
+  s.add_dependency("jnunemaker-happymapper", ["> 0.0.0"])
   s.add_dependency("curb", ["> 0.0.0"])
 end
